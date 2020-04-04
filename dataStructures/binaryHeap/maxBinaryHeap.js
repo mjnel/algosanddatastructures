@@ -37,69 +37,43 @@ class MaxBinaryHeap{
     }
 
     // removing the max item
-    // remove(){
-    //     // debugger
+    remove(){
+        // debugger
  
-
-    //     let endValue = this.valuesList[this.valuesList.length-1]
-    //     let startValue = this.valuesList[0]
-    //     this.valuesList.shift()
-    //     this.valuesList.unshift(endValue)
-    //     this.valuesList.pop()
-    //     this.sinkDown(0)
-    //     return startValue
+        let max = this.valuesList[0]
+        let end = this.valuesList.pop()
+        this.valuesList[0] = end
+        this.sinkDown()
+        return max
    
-    // }
+    }
 
 
-    // sinkDown(nodeLocation){
-    //     let tempParent = this.valuesList[nodeLocation] 
-    //     let leftValue = this.valuesList[(2*nodeLocation)+1] 
-    //     let rightValue = this.valuesList[(2*nodeLocation)+2] 
-    //     let leftSideBigger = false
-    //     // debugger;
-        
-    //     //break case - as its a recurisve function
+    sinkDown(){
 
-    //     if(leftValue === undefined || rightValue === undefined){
-    //         // debugger
-    //         return this.valuesList
-    //     }
+        let idx = 0
+        const length = this.valuesList.length
+        const element = this.value[0]
 
-    //     // if the node is above both the left and right then return sinkDown function
-    //     if(tempParent > leftValue && tempParent > rightValue){
-    //         debugger;
-    //         return this.valuesList
-    //     }else{
-    
-    //     if(leftValue > rightValue){
-    //             leftSideBigger = true
-    //         }   
-    //     // if the left is bigger
-    //     if(leftSideBigger){       
-    //                 let leftIndex = (2*nodeLocation)+1
-    //                 let temp = this.valuesList[nodeLocation]
+        while(true){
+            let leftChildIdx = 2*idx +1
+            let rightChildIdx = 2*idx +2
+            let leftChild, rightChild
+            let swap = null
 
-    //                 this.valuesList[nodeLocation]= leftValue
-    //                 this.valuesList[leftIndex] = temp
-    //                 // debugger
-    //                 this.sinkDown(leftIndex)
-
-    //         }else{
-    //                 let rightIndex = (2*nodeLocation)+2
-    //                 let temp = this.valuesList[nodeLocation]
-
-    //                 this.valuesList[nodeLocation]= rightValue
-    //                 this.valuesList[rightIndex] = temp
-    //                 // debugger; 
-    //                 this.sinkDown(rightIndex)
-    //         }
-    //     }   
-
-    //     // debugger
+                if(leftChildIdx < length){
+                    left
+                }
 
 
-    // }
+
+
+            if(swap === null) break
+
+        }
+
+
+    }
 
 }
 
