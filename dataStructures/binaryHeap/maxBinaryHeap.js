@@ -36,6 +36,72 @@ class MaxBinaryHeap{
 
     }
 
+
+
+
+        // remove(){
+    //     // debugger
+ 
+
+    //     let endValue = this.valuesList[this.valuesList.length-1]
+    //     let startValue = this.valuesList[0]
+    //     this.valuesList.shift()
+    //     this.valuesList.unshift(endValue)
+    //     this.valuesList.pop()
+    //     this.sinkDown(0)
+    //     return startValue
+   
+    // }
+
+
+    // sinkDown(nodeLocation){
+    //     let tempParent = this.valuesList[nodeLocation] 
+    //     let leftValue = this.valuesList[(2*nodeLocation)+1] 
+    //     let rightValue = this.valuesList[(2*nodeLocation)+2] 
+    //     let leftSideBigger = false
+    //     // debugger;
+        
+    //     //break case - as its a recurisve function
+
+    //     if(leftValue === undefined || rightValue === undefined){
+    //         // debugger
+    //         return this.valuesList
+    //     }
+
+    //     // if the node is above both the left and right then return sinkDown function
+    //     if(tempParent > leftValue && tempParent > rightValue){
+    //         debugger;
+    //         return this.valuesList
+    //     }else{
+    
+    //     if(leftValue > rightValue){
+    //             leftSideBigger = true
+    //         }   
+    //     // if the left is bigger
+    //     if(leftSideBigger){       
+    //                 let leftIndex = (2*nodeLocation)+1
+    //                 let temp = this.valuesList[nodeLocation]
+
+    //                 this.valuesList[nodeLocation]= leftValue
+    //                 this.valuesList[leftIndex] = temp
+    //                 // debugger
+    //                 this.sinkDown(leftIndex)
+
+    //         }else{
+    //                 let rightIndex = (2*nodeLocation)+2
+    //                 let temp = this.valuesList[nodeLocation]
+
+    //                 this.valuesList[nodeLocation]= rightValue
+    //                 this.valuesList[rightIndex] = temp
+    //                 // debugger; 
+    //                 this.sinkDown(rightIndex)
+    //         }
+    //     }   
+
+    //     // debugger
+
+
+    // }
     // removing the max item
     remove(){
         // debugger
@@ -62,9 +128,18 @@ class MaxBinaryHeap{
             let swap = null
 
                 if(leftChildIdx < length){
-                    left
+                    leftChild = this.valuesList[leftChildIdx];
+                    if(leftChild > element){
+                        swap = leftChildIdx
+                    }
                 }
 
+                if(rightChildIdx < length){
+                    rightChild = this.valuesList[rightChildIdx]; 
+                    if(swap == null && rightChild > element) || (swap{
+
+                    }
+                }
 
 
 
