@@ -62,6 +62,11 @@ class PriorityQueue {
         }
 
     }
+
+
+
+
+
     dequeue(){
     
         // debugger;
@@ -125,8 +130,36 @@ class PriorityQueue {
 
 
 }
+// working
 
-let testPriorityQueue = new PriorityQueue
+module.exports = {PriorityQueue}
+
+
+
+
+
+    // class PriorityQueue{
+    //     constructor(){
+    //         this.values =[]
+    //     }
+
+
+    //     enqueue(val, priority){
+    //         this.values.push({val, priority})
+    //         this.sort()
+    //     }
+
+    //     dequeue(){
+    //         return this.values.shift()
+    //     }
+
+    //     sort(){
+    //         this.values.sort((a,b)=> a.priority - b.priority)
+    //     }
+
+    // }
+
+let testPriorityQueue = new PriorityQueue()
 testPriorityQueue.enqueue("Mark",7)
 testPriorityQueue.enqueue("Mark",36)
 testPriorityQueue.enqueue("Mark",19)
@@ -136,16 +169,10 @@ testPriorityQueue.enqueue("Mark",2)
 testPriorityQueue.enqueue("Mark",1)
 testPriorityQueue.enqueue("Mark",25)
 testPriorityQueue.enqueue("Mark",100)
-testPriorityQueue.dequeue()
+// debugger;
+// testPriorityQueue.dequeue()
 
-
-// mark.insert(56)
-// mark.insert(12)
-// mark.insert(11)
-// mark.insert(9)
-// mark.insert(1)
-// mark.insert(100)
-debugger; 
+// debugger; 
 
 
 

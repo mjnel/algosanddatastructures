@@ -1,224 +1,162 @@
 
 
+// https://www.codewars.com/kata/5dfa33aacec189000f25e9a9/discuss/javascript - comment
 
+// https://www.codewars.com/kata/56a1c63f3bc6827e13000006/train/javascript - current
 
-// function sameFrequency(num1, num2){
+function smaller(arr) {
+  
+  let resArr = []
+  let counter = 0 
 
-//     // put into array
-//     // put into object
-//     //compar two objects
-//     let num1Arr = num1.toString().split('') 
-//     let num2Arr = num2.toString().split('') 
-     
+  // debugger
 
-//     if(num1Arr.length !== num2Arr.length) return false
 
-//     let obj1 = {}
-//     let obj2 = {}
+  function inner(pointerOne, pointerTwo){
 
-//     for(let val of num1Arr){
-//         obj1[val] = (obj1[val] || 0) +1
-//     }
-
-//     for(let val of num2Arr){
-//         obj2[val] = (obj2[val] || 0) +1
-//     }   
-    
-//     // console.log(`obj1`)
-//     // console.log(obj1)
-//     // console.log(`obj2`)
-//     // console.log(obj2)
-
-//     // check does it exist?
-// // check does it appear for the same fequency
-
-// for(let key in obj1){
-//     if(!(key in obj2)){
-//         return false;
-//     }
-
-//     debugger; 
-
-//     if(obj1[key] != obj2[key]){
-//         return false
-//     }
-
-// }
-
-// return true
-
-
-
-
-// }
-
-
-// function areThereDuplicates(...args) {
-//     // Two pointers
-    
-//     args.sort()
-//     console.log(args)
-
-//     let start = 0;
-//     let next = 1;
-//     while(next < args.length){
-//       if(args[start] === args[next]){
-//           return true
-//       }
-//       start++
-//       next++
-//     }
-//     return false
-//   }
-
-//   areThereDuplicates('l','p','i', 'l')
-//   areThereDuplicates(8,0,6,9,6,5,7,8)
-
-
-
-
-// multiple pointers
-// function areThereDuplicates(){
-
-//     let inputArg = []
-
-//     for(var i =0; i< arguments.length; i++){
-//         inputArg.push(arguments[i])
-//     }
-
-
-//     let j = 1
-
-//     inputArg.sort()
-
-//     console.log(inputArg)
-
-//     for(let i = 0; i <inputArg.length; i++){
-//         if(inputArg[i] == inputArg[j]){
-//             return true
-//         }else {
-//                 j++ 
-//         }
-//     }
-//     return false
-
-// }
-
-
-
-
-// console.log(areThereDuplicates(1,2,4))
-
-
-
-// function averagePair(arr, average){
-
-// let j = 1
-
-// if(arr.length === 0){
-//     return false
-// }
-
-//     for(let i =0; i<arr.length; i++){
-//         let comparator = arr[i]+arr[j]/2
-//         console.log(comparator, average )
-//         if(comparator == average){
-//             return true
-//         }else{
-//             j ++ 
-//         }
-//     }
-
-//     return false
-// }
-
-
-// console.log(averagePair([1,3,3,5,6,7,10,12,19,], 8))
-// console.log(averagePair([9,0], 2.5))
-//true 
-
-
-// function isSubsequence(str1, str2) {
-//     var j = 0;
-//     if (!str1) return true;
-
-//     // if j is less than sring 2 lenght
-//     // do a comparison of str1[i] and str2[j]
-//         //true - increment i
-//         // if i is the same length as str1 return
-//             // if not increment j
-//     debugger;
-
-//     for(let i =0; i<str2.length; i++){
-//         if(str2[j] == str1[i]){
-//             i++
-//         }
-//         if(i == str1.length) return true  
-//         j++
-//     }
-//   }
-
-
-// console.log(  isSubsequence('bear','jidnfbjsbeajr'))
-
-
-
-// function maxSubArraySum(arr,numberOfInts){
-
-//     //find the first max
-//     let tempMax = 0
-//     for(let i=0; i< numberOfInts; i++){
-//         tempMax += arr[i]
-//     }
-
-
-//     let i = numberOfInts;
-//     let loopingMax = tempMax
-
-//     while(i < arr.length){
-//         // minusing out the first num and adding back in the second number
-//         loopingMax = (loopingMax - arr[i -numberOfInts]) + arr[i] 
-//         tempMax = Math.max(loopingMax, tempMax)
-//         console.log(tempMax, loopingMax)
-//           i++
-//     }
-
-//     return tempMax
-
-// }
-
-
-// console.log(maxSubArraySum([900,100,7,8,1999,1],3))
-// //1000 | 1
-// //107  | 2
-// //15   | 3
-// //2007 | 4
-// //2000 | 5   
-
-function findLongestSubstring(str) {
-    let longest = 0;
-    let seen = {};
-    let start = 0;
-   
-    //looping thought the array
-    for (let i = 0; i < str.length; i++) {
-      let char = str[i];
-      console.log(char)
-      console.log(seen)
-      if (seen[char]) {
-        start = Math.max(start, seen[char]);
-        console.log(start)
-      }
-      // index - beginning of substring + 1 (to include current in count)
-      longest = Math.max(longest, i - start + 1);
-      // store the index of the next char so as to not double count
-      seen[char] = i + 1;
+    if(pointerOne === arr.length){
+      // debugger
+      return
     }
-    return longest;
+  
+      // if we have got to the end of the looping cycle 
+          if(pointerTwo === arr.length){
+            pointerOne ++
+            pointerTwo = pointerOne +1
+            resArr.push(counter)
+            counter = 0 
+            // debugger
+            return inner(pointerOne,pointerTwo); 
+          }
+      
+      // if pointer 2 is less than pointer 1 
+      if(arr[pointerTwo] < arr[pointerOne]){
+          counter ++
+        }
+
+        pointerTwo ++
+        // debugger
+        return inner(pointerOne, pointerTwo)
+
   }
 
+  inner(0,1);
+// debugger
+
+  return resArr
+
+}
+
+function smallerTwo(arr){
+  
+  function checker(comparator, element){
+    if(element< comparator){
+      return true
+    }else{
+      return false
+    }
+  }
+  
+  
+  let res =  arr.map(x => {
+    if(x >4){
+      x*2
+      debugger
+    }
+  })  
+
+  debugger
+
+}
+
+function seven(callback, number){
+  
+}
+
+
+// let test  = smallerTwo([1,2,3]) 
+// let test2  = smallerTwo([5,4,3,2,1]) 
+// debugger
+//[4, 3, 2, 1, 0]
 
 
 
-  findLongestSubstring('thisisawsome') 
-// 5 - i
+
+
+
+
+// [1, 1, 0]
+
+// describe('Initial Tests', _ => {
+//   Test.assertSimilar(smaller([5, 4, 3, 2, 1]), [4, 3, 2, 1, 0]);
+//   Test.assertSimilar(smaller([1, 2, 3]), [0, 0, 0]);
+//   Test.assertSimilar(smaller([1, 2, 0]), [1, 1, 0]);
+//   Test.assertSimilar(smaller([1, 2, 1]), [0, 1, 0]);
+//   Test.assertSimilar(smaller([1, 1, -1, 0, 0]), [3, 3, 0, 0, 0]);
+//   Test.assertSimilar(smaller([5, 4, 7, 9, 2, 4, 4, 5, 6]), [4, 1, 5, 5, 0, 0, 0, 0, 0]);
+// });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  // debugger
+  // for(let i = 0; i < arr.length; i++){
+  //   let currentVal = arr[i]
+
+  //   // console.log(currentVal)
+
+  //   for(let j = i+1; j <arr.length; j++){
+  //     let compareVal = arr[j]
+  //     // debugger
+  //     if(compareVal < currentVal){
+  //       count++
+  //       // debugger
+  //     }
+  //   }    
+  //   resArr.push(count)
+  //   count = 0 
+  //   // debugger
+  // }
+
+
+
+  // function inner (){
+
+  //   if(pointerOne === arr.length){
+  //     debugger
+  //     return
+  //   }
+  
+  //     // if we have got to the end of the looping cycle 
+  //         if(pointerTwo === arr.length){
+  //           pointerOne ++
+  //           pointerTwo = pointerOne +1
+  //           resArr.push(counter)
+  //           counter = 0 
+  //           debugger
+  //           return inner(); 
+  //         }
+      
+  //     // if pointer 2 is less than pointer 1 
+  //     if(arr[pointerTwo] < arr[pointerOne]){
+  //         counter ++
+  //       }
+
+  //       pointerTwo ++
+  //       debugger
+  //       return inner()
+
+  // }

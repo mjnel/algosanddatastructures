@@ -28,10 +28,7 @@ for(var i = 0; i < arr.length; i++){
 
 
 
+
 let testArr = [0,2,34,22,10,19,17]
-
-
-
-
-
-selectionSort(testArr)
+let test = selectionSort(testArr)
+debugger

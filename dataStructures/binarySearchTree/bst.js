@@ -236,33 +236,28 @@ depthFirstSearchInOrder(){
     return nodesVisitied
 }
 
- 
+ }
 
-
-
-
-
-   
-
-     
-    
-
-  
-    }
-    
-
+let testArr =  [5, 4, 7, 9, 2, 4, 4, 5, 6]
 let tree = new BinarySearchTree
 
-tree.insert(10)
-tree.insert(5)
-tree.insert(13)
-tree.insert(11)
-tree.insert(2)
-tree.insert(16)
-tree.insert(7)
-tree.depthFirstSearchPostOrder()
-tree.breathFirstSearch()
-tree.depthFirstSearchInOrder()
+for(let i =0;  i<testArr.length; i++){
+    console.log(testArr[i])
+    tree.insert(testArr[i])
+    // debugger
+}
+
+// debugger
+// tree.insert(10)
+// tree.insert(5)
+// tree.insert(13)
+// tree.insert(11)
+// tree.insert(2)
+// tree.insert(16)
+// tree.insert(7)
+// tree.depthFirstSearchPostOrder()
+// tree.breathFirstSearch()
+// tree.depthFirstSearchInOrder()
 
 
 // debugger
